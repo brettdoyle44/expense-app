@@ -7,6 +7,8 @@
   "scripts": {
     "serve": "live-server public/",
     "build": "webpack",
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "test": "jest --config=jest.config.json"
   },
@@ -25,6 +27,7 @@
     "enzyme-to-json": "3.0.1",
     "jest": "20.0.4",
     "live-server": "^1.2.1",
+    "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "node-sass": "^4.12.0",
     "normalize.css": "^8.0.1",
@@ -45,5 +48,8 @@
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1"
+  },
+  "devDependencies": {
+    "extract-text-webpack-plugin": "4.0.0-alpha.0"
   }
 }
