@@ -1,4 +1,4 @@
-import uuid from 'uuid'
+// import uuid from 'uuid'
 import database from '../firebase/firebase'
 
 // ADD_EXPENSE
@@ -53,6 +53,17 @@ export const editExpense = (id, updates) => ({
   id,
   updates
 })
+
+export const startEditExpense = (id, updates) => {
+  return dispatch => {
+    return database
+      .ref(`expenses/${id}`)
+      .update(updates)
+      .then(() => {
+        dispatch(editExpense(id, updates))
+      })
+  }
+}
 
 // SET_EXPENSES
 
