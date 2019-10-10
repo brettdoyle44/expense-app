@@ -27,6 +27,10 @@ module.exports = env => {
           exclude: /node_modules/
         },
         {
+          test: /\.svg$/,
+          loader: 'raw-loader'
+        },
+        {
           test: /\.s?css$/,
           use: CSSExtract.extract({
             use: [
