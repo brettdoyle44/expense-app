@@ -4,6 +4,7 @@ import { SingleDatePicker } from 'react-dates'
 import styled from 'styled-components'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
+import DeleteIcon from '@material-ui/icons/Delete'
 
 const Input = styled.input`
   font-size: 0.75em;
@@ -20,8 +21,6 @@ const TextArea = styled.textarea`
   border: 1px solid #cacccd;
   width: 200px;
 `
-
-const now = moment()
 
 class ExpenseForm extends React.Component {
   constructor(props) {
@@ -141,11 +140,23 @@ class ExpenseForm extends React.Component {
               <Grid item xs={12}>
                 <Button
                   style={{ backgroundColor: '#BB86FC', color: '#ffffff' }}
+                  variant="contained"
                   size="large"
                   type="submit"
                 >
                   {this.props.buttonText}
                 </Button>
+                {this.props.onRemove && (
+                  <Button
+                    style={{ marginLeft: '1em' }}
+                    variant="contained"
+                    color="secondary"
+                    startIcon={<DeleteIcon />}
+                    onClick={this.props.onRemove}
+                  >
+                    Delete
+                  </Button>
+                )}
               </Grid>
             </form>
           </Grid>

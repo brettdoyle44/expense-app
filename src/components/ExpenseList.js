@@ -11,6 +11,7 @@ import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
 import Container from '@material-ui/core/Container'
 import ExpenseListFilters from '../components/ExpenseListFilters'
+import TablePagination from '@material-ui/core/TablePagination'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -58,7 +59,7 @@ export const ExpenseList = props => {
             </TableHead>
             <TableBody>
               {props.expenses.map(expense => (
-                <TableRow hover={true} key={expense.id}>
+                <TableRow key={expense.id}>
                   <ExpenseListItem key={expense.id} {...expense} />
                 </TableRow>
               ))}
@@ -77,12 +78,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(ExpenseList)
-
-{
-  /* <div>
-    <h1>Expense List</h1>
-    {props.expenses.map(expense => (
-      <ExpenseListItem key={expense.id} {...expense} />
-    ))}
-  </div> */
-}
