@@ -28,7 +28,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^3.2.0",
-    "express": "4.15.4",
+    "express": "4.17.3",
     "extract-text-webpack-plugin": "4.0.0-alpha.0",
     "firebase": "^7.0.0",
     "flwww": "^2.0.13",
